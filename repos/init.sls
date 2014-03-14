@@ -40,7 +40,11 @@ dsd-deb:
     - require_in:
       - pkg.*
 
-
+dsd-custom-deb:
+    pkgrepo.managed:
+    - humanname: DSD Apt custom package repo
+    - name: deb [arch=amd64] http://repo1.dsd.io/ precise main
+    - file: /etc/apt/sources.list.d/dsd-custom.list
 
 
 
