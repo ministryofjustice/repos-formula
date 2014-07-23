@@ -12,11 +12,12 @@ sensu-apt-key:
 
 
 sensu-deb:
-  pkgrepo.managed:
-    - humanname: Sensu repo
-    - name: deb http://repos.sensuapp.org/apt sensu main
-    - file: /etc/apt/sources.list.d/sensu.list
+  file.managed:
+    - contents: deb http://repos.sensuapp.org/apt sensu main
+    - name: /etc/apt/sources.list.d/sensu.list
     - require:
       - cmd: sensu-apt-key
     - require_in:
       - pkg.*
+    - watch_in:
+      - cmd: apt_get_update

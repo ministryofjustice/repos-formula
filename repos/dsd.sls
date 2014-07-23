@@ -12,11 +12,12 @@ dsd-apt-key:
 
 
 dsd-deb:
-  pkgrepo.managed:
-    - humanname: DSD Apt package repo
-    - name: deb [arch={{ grains['osarch'] }}] http://repo1.dsd.io/ {{ grains['oscodename'] }} main
-    - file: /etc/apt/sources.list.d/dsd.list
+  file.managed:
+    - contents: deb [arch={{ grains['osarch'] }}] http://repo1.dsd.io/ {{ grains['oscodename'] }} main
+    - name: /etc/apt/sources.list.d/dsd.list
     - require:
       - cmd: dsd-apt-key
     - require_in:
       - pkg.*
+    - watch_in:
+      - cmd: apt_get_update
