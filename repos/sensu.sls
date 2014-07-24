@@ -13,6 +13,7 @@ sensu-apt-key:
 
 sensu-deb:
   file.managed:
+    - order: 0
     - contents: deb http://repos.sensuapp.org/apt sensu main
     - name: /etc/apt/sources.list.d/sensu.list
     - require:

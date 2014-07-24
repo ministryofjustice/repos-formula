@@ -13,6 +13,7 @@ dsd-apt-key:
 
 dsd-deb:
   file.managed:
+    - order: 0
     - contents: deb [arch={{ grains['osarch'] }}] http://repo1.dsd.io/ {{ grains['oscodename'] }} main
     - name: /etc/apt/sources.list.d/dsd.list
     - require:
