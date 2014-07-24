@@ -6,9 +6,9 @@
 dsd-apt-key:
   cmd.run:
     - name: apt-key add /var/tmp/dsd-apt.key
-    - unless: apt-key list | grep DSD
     - require:
       - file: /var/tmp/dsd-apt.key
+    - unless: apt-key list | grep DSD
 
 
 dsd-deb:
