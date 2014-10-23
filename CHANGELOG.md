@@ -1,3 +1,7 @@
+## CURRENT
+
+* Fix hardcoded distro version for postgresql repo
+
 ## Version 1.0.1
 
 * Code cleanup

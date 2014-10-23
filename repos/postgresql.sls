@@ -14,7 +14,7 @@ pgsql-apt-key:
 postgres-deb:
   pkgrepo.managed:
     - humanname: PostgreSQL deb repository
-    - name: deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
+    - name: deb http://apt.postgresql.org/pub/repos/apt/ {{ grains['oscodename'] }}-pgdg main
     - file:  /etc/apt/sources.list.d/pgdg.list
     - require:
       - cmd: pgsql-apt-key
