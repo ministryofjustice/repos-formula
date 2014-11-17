@@ -6,7 +6,7 @@
 dsd-apt-key:
   cmd.run:
     - name: apt-key add /var/tmp/dsd-apt.key
-    - unless: apt-key list | grep DSD
+    - unless: apt-key list | grep 6929455C
     - require:
       - file: /var/tmp/dsd-apt.key
 
@@ -14,7 +14,7 @@ dsd-apt-key:
 dsd-deb:
   pkgrepo.managed:
     - humanname: DSD Apt package repo
-    - name: deb [arch={{ grains['osarch'] }}] http://repo1.dsd.io/ {{ grains['oscodename'] }} main
+    - name: deb [arch={{ grains['osarch'] }}] http://repo.dsd.io {{ grains['oscodename'] }} main
     - file: /etc/apt/sources.list.d/dsd.list
     - require:
       - cmd: dsd-apt-key
