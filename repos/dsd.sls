@@ -14,7 +14,7 @@ dsd-apt-key:
 dsd-deb:
   pkgrepo.managed:
     - humanname: DSD Apt package repo
-    - name: deb [arch={{ grains['osarch'] }}] http://repo.dsd.io {{ grains['oscodename'] }} main
+    - name: deb [arch={{ grains['osarch'] }},all] http://repo.dsd.io {{ grains['oscodename'] }} main
     - file: /etc/apt/sources.list.d/dsd.list
     - require:
       - cmd: dsd-apt-key
