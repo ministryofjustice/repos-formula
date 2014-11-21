@@ -1,4 +1,4 @@
-## Unreleased
+## Version 1.1.1
 
 * Add 'all' into the architecture for dsd.io - some pacakges are missing
   without this
