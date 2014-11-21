@@ -1,3 +1,8 @@
+## Unreleased
+
+* Add 'all' into the architecture for dsd.io - some pacakges are missing
+  without this
+
 ## Version 1.1.0
 
 * Move to repo.dsd.io
