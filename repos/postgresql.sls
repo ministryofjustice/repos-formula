@@ -8,8 +8,9 @@ pgsql-apt-key:
     - name: apt-key add /var/tmp/postgresql.key
     - require:
       - file: /var/tmp/postgresql.key
-    - unless: apt-key list | grep '4096R/ACCC4CF8'
-
+    - unless: apt-key list | grep '4096R/ACCC4CF8.*expires'
+# if expired it shows up like this:
+# pub   4096R/ACCC4CF8 2011-10-13 [expired: 2016-02-24]
 
 postgres-deb:
   pkgrepo.managed:

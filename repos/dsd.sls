@@ -6,7 +6,7 @@
 dsd-apt-key:
   cmd.run:
     - name: apt-key add /var/tmp/dsd-apt.key
-    - unless: apt-key list | grep 6929455C
+    - unless: apt-key list | grep '6929455C.*expires'
     - require:
       - file: /var/tmp/dsd-apt.key
 
