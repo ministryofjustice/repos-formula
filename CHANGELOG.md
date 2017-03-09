@@ -1,3 +1,8 @@
+## Version 1.1.3
+
+* Update sensu key detection (it never expires)
+* Update sensu repo as it changed
+
 ## Version 1.1.2
 
 * Update expired pg key
