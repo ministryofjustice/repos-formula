@@ -8,7 +8,7 @@ sensu-apt-key:
   cmd:
     - run
     - name: apt-key add /var/tmp/sensu.key
-    - unless: apt-key list | grep '2048R/7580C77F.*expires'
+    - unless: apt-key list | grep '2048R/7580C77F.*'
 
 sensu-deb:
   pkgrepo.absent:
